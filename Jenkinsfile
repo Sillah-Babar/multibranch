@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Run Hello World Script') {
             steps {
-                sh chmod +x 
                 sh './hello1.sh'
             }
         }
