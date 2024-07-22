@@ -9,6 +9,7 @@ pipeline {
         }
         stage('Run Hello World Script') {
             steps {
+                sh 'ls -al'
                 sh './hello1.sh'
             }
         }
