@@ -17,7 +17,7 @@ pipeline {
                 sh 'env'
                 sh 'pwd'
                 sh 'ls -al'
-                sh '${WORKSPACE}/hello1.sh'
+                sh 'bash ${WORKSPACE}/hello1.sh'
             }
         }
     }
