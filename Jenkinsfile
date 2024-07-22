@@ -1,16 +1,23 @@
 pipeline {
     agent any
+
     stages {
+        stage('Declarative: Checkout SCM') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Prepare') {
             steps {
-                // Ensure the script has execute permissions
-                sh 'chmod +x ./hello1.sh'
+                sh 'chmod +x ${WORKSPACE}/hello1.sh'
             }
         }
         stage('Run Hello World Script') {
             steps {
+                sh 'env'
+                sh 'pwd'
                 sh 'ls -al'
-                sh './hello1.sh'
+                sh '${WORKSPACE}/hello1.sh'
             }
         }
     }
